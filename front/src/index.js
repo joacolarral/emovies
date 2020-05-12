@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import Main from "./components/Main";
 import store from "./store/store";
+import "./assets/css/main/main.modules.css";
 /* import { fetchMovie } from "./store/actions/movies"; */
 
 /* const onAppEnter = () => store.dispatch(fetchMovies()); */
@@ -11,7 +12,9 @@ import store from "./store/store";
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Route path="/" component={Main} /* onEnter={onAppEnter} */ />
+      <div id="main">
+        <Route path="/" component={Main} />
+      </div>
     </BrowserRouter>
   </Provider>,
   document.getElementById("app")

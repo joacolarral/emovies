@@ -34,11 +34,11 @@ passport.use(
   new LocalStrategy(
     {
       usernameField: "username", // input name for username
-      passwordField: "password" // input name for password
+      passwordField: "password", // input name for password
     },
-    function(inputUsername, inputPassword, done) {
+    function (inputUsername, inputPassword, done) {
       User.findOne({ where: { username: inputUsername } }) // searching for the User
-        .then(user => {
+        .then((user) => {
           if (!user) {
             return done(null, false, { message: "Incorrect username." });
           }
@@ -53,13 +53,13 @@ passport.use(
 );
 
 // serialize: how we save the user and stored in session object by express-session
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
 // deserialize: how we look for the user
-passport.deserializeUser(function(id, done) {
-  User.findByPk(id).then(user => done(null, user));
+passport.deserializeUser(function (id, done) {
+  User.findByPk(id).then((user) => done(null, user));
 });
 
 /* ------------ PASSPORT -----------*/
@@ -74,13 +74,8 @@ app.use((err, req, res, next) => {
   res.status(404).send(err);
 });
 
-console.log("escuchando el puerto 3000");
 db.sync({ force: false })
-  .then(con => {
-    // force: true adds a DROP TABLE IF EXISTS before trying to create the table - if you force, existing tables will be overwritten.
-    console.log(
-      `dialect: ${con.options.dialect}, database: ${con.config.database}, connected at ${con.config.host}:${con.config.port}`
-    );
+  .then(() => {
     app.listen(3000, () => console.log("SERVER LISTENING AT PORT 3000"));
   })
   .catch(console.log);

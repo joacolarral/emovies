@@ -5,16 +5,19 @@ const db = require("../config/db");
 const Favourite = db.define("favourite", {
   imdbID: {
     type: S.STRING,
-    allowNull: false
+    allowNull: false,
   },
   Poster: {
     type: S.STRING,
-    allowNull: false
+    allowNull: false,
   },
   Title: {
     type: S.STRING,
-    allowNull: false
-  }
+    allowNull: false,
+  },
+  Year: {
+    type: S.INTEGER,
+  },
 });
 
 module.exports = Favourite;
