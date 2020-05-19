@@ -1,5 +1,5 @@
 const express = require("express");
-const volleyball = require("volleyball");
+const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const session = require("express-session"); // req.session || https://www.tutorialspoint.com/expressjs/expressjs_sessions.htm
 const cookieParser = require("cookie-parser"); // req.cookies
@@ -14,7 +14,7 @@ const app = express();
 app.set("view engine", "html"); // que extensiones de archivo tienen los templates
 
 // logging middleware
-app.use(volleyball);
+app.use(morgan("dev"));
 // body parsing middleware
 app.use(bodyParser.urlencoded({ extended: true })); // para HTML form submits
 app.use(bodyParser.json()); // seria para AJAX requests

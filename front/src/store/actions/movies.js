@@ -17,8 +17,8 @@ export const fetchMovieId = (movieId) => (dispatch) =>
     .then((res) => res.data)
     .then((movie) => (console.log(movie), dispatch(receiveMovieId(movie))));
 
-export const fetchMovieTitle = (movie, history) => (dispatch) =>
+export const fetchMovieTitle = (movie, i = 1) => (dispatch) =>
   axios
-    .get(`https://www.omdbapi.com/?apikey=20dac387&s=${movie}`)
+    .get(`https://www.omdbapi.com/?apikey=20dac387&s=${movie}&page=${i}`)
     .then((res) => res.data)
-    .then((movies) => dispatch(receiveMovieTitle(movies.Search)));
+    .then((movies) => dispatch(receiveMovieTitle(movies)));
