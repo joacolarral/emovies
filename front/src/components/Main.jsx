@@ -9,6 +9,7 @@ import MoviesContainer from "../container/MoviesContainer";
 import CreateAccContainer from "../container/CreateAccContainer";
 import LoginContainer from "../container/LoginContainer";
 import FavsContainer from "../container/FavsContainer";
+import SingleMovieContainer from "../container/SingleMovieContainer";
 
 class Main extends React.Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class Main extends React.Component {
   } */
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <NavbarFilterableContainer />
         <Switch>
           <Route exact path="/" component={HomeContainer} />
+          <Route path="/movies/:id" component={SingleMovieContainer} />
           <Route path="/movies" component={MoviesContainer} />
           <Route path="/createaccount" component={CreateAccContainer} />
           <Route path="/login" component={LoginContainer} />
