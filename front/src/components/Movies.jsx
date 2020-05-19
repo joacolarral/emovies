@@ -5,12 +5,11 @@ import unavailableImage from "../assets/images/unavailableImage.jpg";
 import styles from "../assets/css/movies/Movies.module.css";
 
 export default ({ movies }) => (
-  console.log(movies),
-  (
-    <Container>
-      <Row>
-        {movies.map((movie) => (
-          <Col key={movie.imdbID}>
+  <Container>
+    <Row>
+      {movies.map((movie) => (
+        <Col key={movie.imdbID}>
+          <Link to={`/movies/${movie.imdbID}`}>
             <Card style={{ width: "18rem" }} className={styles.card}>
               <Card.Img
                 className={styles.imagen}
@@ -22,11 +21,11 @@ export default ({ movies }) => (
                 <Card.Text>Year: {movie.Year}</Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  )
+          </Link>
+        </Col>
+      ))}
+    </Row>
+  </Container>
 
   /*  <div className="movies">
     <h3>Movies</h3>
