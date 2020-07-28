@@ -6,9 +6,9 @@ const cookieParser = require("cookie-parser"); // req.cookies
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const path = require("path");
-const routes = require("./routes/index");
 const db = require("./config/db");
 const User = require("./models/User");
+const Favourite = require("./models/Favourite");
 const app = express();
 
 app.set("view engine", "html"); // que extensiones de archivo tienen los templates
