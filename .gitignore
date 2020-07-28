@@ -58,3 +58,5 @@ typings/
 .env
 
 ./back/public/bundle
+
+.DS_Store

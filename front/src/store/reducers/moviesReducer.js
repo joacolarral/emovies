@@ -1,7 +1,7 @@
 import { RECEIVE_MOVIE, RECEIVE_MOVIES } from "../constants";
 
 const initialState = {
-  movies: [],
+  movies: {},
   movieSelected: {},
 };
 
