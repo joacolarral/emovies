@@ -57,6 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
-./back/public/bundle
+back/public/bundle.js
+back/public/bundle.js.map
 
 .DS_Store
