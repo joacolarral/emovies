@@ -2,23 +2,19 @@ import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchUser } from "../store/actions/user";
-import HomeContainer from "../container/HomeContainer";
-import NavbarFilterableContainer from "../container/NavbarFilterableContainer";
-import MovieContainer from "../container/MovieContainer";
-import MoviesContainer from "../container/MoviesContainer";
-import CreateAccContainer from "../container/CreateAccContainer";
-import LoginContainer from "../container/LoginContainer";
-import FavsContainer from "../container/FavsContainer";
-import SingleMovieContainer from "../container/SingleMovieContainer";
+import HomeContainer from "./Home/HomeContainer";
+import NavbarFilterableContainer from "./Navbar/NavbarFilterableContainer";
+import MovieContainer from "./Movie/MovieContainer";
+import MoviesContainer from "./Movies/MoviesContainer";
+import CreateAccContainer from "./CreateAccount/CreateAccContainer";
+import LoginContainer from "./Login/LoginContainer";
+import FavsContainer from "./Favorites/FavsContainer";
+import SingleMovieContainer from "./SingleMovie/SingleMovieContainer";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  /*   componentDidMount() {
-    this.props.fetchUser();
-  } */
 
   render() {
     return (
